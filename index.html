@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Null | Software Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Kufi+Arabic:wght@300;400;700&family=Reem+Kufi:wght@400;700&family=Noto+Sans+Old+South+Arabian&family=UnifrakturMaguntia&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #d4af37;
+            --gold-bright: #f6e05e;
+            --gold-dark: #b8860b;
+            --bg-deep: #000000;
+        }
+        body {
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease;
+        }
+        .font-arabic {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+        }
+        .font-english {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .font-serif-lux {
+            font-family: 'Cinzel', serif;
+        }
+        .font-gothic {
+            font-family: 'UnifrakturMaguntia', serif;
+        }
+        .font-musnad {
+            font-family: 'Noto Sans Old South Arabian', sans-serif;
+        }
+        .font-reem {
+            font-family: 'Reem Kufi', sans-serif;
+        }
+        
+        /* Metallic Gold Effect */
+        .gold-metallic {
+            background: linear-gradient(
+                to bottom,
+                #b8860b 0%,
+                #f6e05e 20%,
+                #d4af37 40%,
+                #b8860b 60%,
+                #f6e05e 80%,
+                #d4af37 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.5));
+            font-weight: 800;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; }
+      
+        .gold-glow {
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+        }
+
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .musnad-particle {
+            position: absolute;
+            color: #d4af37;
+            opacity: 0.15;
+            animation: float-up linear infinite;
+        }
+        @keyframes float-up {
+            from { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+            to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "framer-motion": "https://esm.sh/framer-motion@^12.29.2",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
