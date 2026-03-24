@@ -15,14 +15,14 @@ const Process: React.FC<ProcessProps> = ({ lang }) => {
     <section id="process" className="py-24 bg-[#050505] relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <motion.div 
-            initial={{ opacity: 0 }} 
+          <motion.div
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-[#d4af37] font-musnad tracking-[0.5em] mb-4 text-xl opacity-40"
           >
             𐩬𐩡 𐩥𐩧𐩤𐩧
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className={`text-4xl md:text-5xl font-bold ${isRtl ? 'font-reem' : 'font-serif-lux'}`}
@@ -33,16 +33,33 @@ const Process: React.FC<ProcessProps> = ({ lang }) => {
         </div>
 
         <div className="relative">
-          {/* Connector Line (Desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#d4af37]/20 to-transparent -translate-y-1/2"></div>
+          {/* Desktop Animated Connector Line */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            style={{ originX: isRtl ? 1 : 0 }}
+            className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/60 to-transparent z-0 shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+          ></motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
+          {/* Mobile Animated Vertical Connector Line */}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+            style={{ originY: 0 }}
+            className="lg:hidden md:hidden absolute left-1/2 top-10 bottom-10 w-[1px] bg-gradient-to-b from-transparent via-[#d4af37]/40 to-transparent -translate-x-1/2 z-0"
+          ></motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-0 relative z-10">
             {PROCESS_STEPS.map((step, index) => (
               <motion.div
                 key={step.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.25, duration: 0.5 }}
                 className="group flex flex-col items-center text-center"
               >
                 <div className="relative mb-8">
