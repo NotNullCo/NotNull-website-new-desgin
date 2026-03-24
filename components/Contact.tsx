@@ -39,46 +39,46 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
         </div>
 
         <div className={`flex flex-col lg:flex-row gap-12 items-start ${isRtl ? 'text-right' : 'text-left'}`}>
-          <div className="lg:w-1/3 space-y-10 w-full">
-            <div className={`flex items-center gap-6 ${isRtl ? 'flex-row' : 'flex-row-reverse text-right'}`}>
-              <div className="w-14 h-14 flex items-center justify-center border border-[#d4af37]/30 text-[#d4af37]"><Clock size={24} /></div>
-              <div>
-                <h4 className="text-xl font-bold text-white mb-0.5">{t.contact.hours}</h4>
-                <p className="text-gray-500 text-base">{t.contact.hours_val}</p>
+          <div className="lg:w-1/3 space-y-8 w-full">
+            <div className={`flex items-start gap-4 ${isRtl ? 'flex-row' : 'flex-row-reverse text-right'}`}>
+              <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center border border-[#d4af37]/30 text-[#d4af37]"><Clock size={24} /></div>
+              <div className="pt-1">
+                <h4 className="text-lg md:text-xl font-bold text-white mb-0.5">{t.contact.hours}</h4>
+                <p className="text-gray-500 text-sm md:text-base">{t.contact.hours_val}</p>
               </div>
             </div>
-            <div className={`flex items-center gap-6 ${isRtl ? 'flex-row' : 'flex-row-reverse text-right'}`}>
-              <div className="w-14 h-14 flex items-center justify-center border border-[#d4af37]/30 text-[#d4af37]"><Phone size={24} /></div>
-              <div>
-                <h4 className="text-xl font-bold text-white mb-0.5">{t.contact.phone}</h4>
-                <p className="text-gray-500 text-base" dir="ltr">+967 776 661 971</p>
+            <div className={`flex items-start gap-4 ${isRtl ? 'flex-row' : 'flex-row-reverse text-right'}`}>
+              <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center border border-[#d4af37]/30 text-[#d4af37]"><Phone size={24} /></div>
+              <div className="pt-1">
+                <h4 className="text-lg md:text-xl font-bold text-white mb-0.5">{t.contact.phone}</h4>
+                <p className="text-gray-500 text-sm md:text-base" dir="ltr">+967 776 661 971</p>
               </div>
             </div>
-            <div className={`flex items-center gap-6 ${isRtl ? 'flex-row' : 'flex-row-reverse text-right'}`}>
-              <div className="w-14 h-14 flex items-center justify-center border border-[#d4af37]/30 text-[#d4af37]"><MessageCircle size={24} /></div>
-              <div>
-                <h4 className="text-xl font-bold text-white mb-0.5">{t.contact.support}</h4>
-                <p className="text-gray-500 text-base">{t.contact.support_val}</p>
+            <div className={`flex items-start gap-4 ${isRtl ? 'flex-row' : 'flex-row-reverse text-right'}`}>
+              <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center border border-[#d4af37]/30 text-[#d4af37]"><MessageCircle size={24} /></div>
+              <div className="pt-1">
+                <h4 className="text-lg md:text-xl font-bold text-white mb-0.5">{t.contact.support}</h4>
+                <p className="text-gray-500 text-sm md:text-base">{t.contact.support_val}</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:w-2/3 w-full bg-[#050505] p-10 border border-[#d4af37]/10">
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="lg:w-2/3 w-full bg-[#050505] p-6 md:p-10 border border-[#d4af37]/10">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="space-y-2">
-                <label className="text-xs text-[#d4af37]/80 uppercase tracking-widest font-bold">{t.contact.name_label}</label>
-                <input name="name" required type="text" className="w-full bg-white/5 border border-[#d4af37]/10 p-4 text-lg text-white focus:border-[#d4af37]/50 transition-all outline-none" />
+                <label className="text-[10px] md:text-xs text-[#d4af37]/80 uppercase tracking-widest font-bold">{t.contact.name_label}</label>
+                <input name="name" required type="text" className="w-full bg-white/5 border border-[#d4af37]/10 p-3 md:p-4 text-base md:text-lg text-white focus:border-[#d4af37]/50 transition-all outline-none" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs text-[#d4af37]/80 uppercase tracking-widest font-bold">{t.contact.email_label}</label>
-                <input name="email" required type="email" className="w-full bg-white/5 border border-[#d4af37]/10 p-4 text-lg text-white focus:border-[#d4af37]/50 transition-all outline-none" />
+                <label className="text-[10px] md:text-xs text-[#d4af37]/80 uppercase tracking-widest font-bold">{t.contact.email_label}</label>
+                <input name="email" required type="email" className="w-full bg-white/5 border border-[#d4af37]/10 p-3 md:p-4 text-base md:text-lg text-white focus:border-[#d4af37]/50 transition-all outline-none" />
               </div>
-              <div className="col-span-2 space-y-2">
-                <label className="text-xs text-[#d4af37]/80 uppercase tracking-widest font-bold">{t.contact.msg_label}</label>
-                <textarea name="message" required rows={4} className="w-full bg-white/5 border border-[#d4af37]/10 p-4 text-lg text-white focus:border-[#d4af37]/50 transition-all outline-none resize-none"></textarea>
+              <div className="col-span-1 md:col-span-2 space-y-2">
+                <label className="text-[10px] md:text-xs text-[#d4af37]/80 uppercase tracking-widest font-bold">{t.contact.msg_label}</label>
+                <textarea name="message" required rows={4} className="w-full bg-white/5 border border-[#d4af37]/10 p-3 md:p-4 text-base md:text-lg text-white focus:border-[#d4af37]/50 transition-all outline-none resize-none"></textarea>
               </div>
-              <div className="col-span-2">
-                <button type="submit" className="w-full py-5 bg-[#d4af37] text-black text-xl font-bold uppercase tracking-widest hover:bg-[#f6e05e] transition-all flex items-center justify-center gap-3">
+              <div className="col-span-1 md:col-span-2">
+                <button type="submit" className="w-full py-4 md:py-5 bg-[#d4af37] text-black text-lg md:text-xl font-bold uppercase tracking-widest hover:bg-[#f6e05e] transition-all flex items-center justify-center gap-3">
                   {t.contact.send}
                   <Send size={20} />
                 </button>

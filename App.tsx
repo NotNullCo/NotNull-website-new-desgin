@@ -108,7 +108,7 @@ const App: React.FC = () => {
 
       {/* Floating Contact Button */}
       <a
-        href="https://wa.me/966500000000"
+        href="https://wa.me/967776661971"
         target="_blank"
         rel="noopener noreferrer"
         className={`fixed bottom-8 ${isRtl ? 'left-8' : 'right-8'} z-50 p-4 bg-[#d4af37] text-black rounded-full shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:scale-110 transition-transform flex items-center gap-2 group`}
@@ -151,8 +151,8 @@ const App: React.FC = () => {
                     key={cat}
                     onClick={() => handleFilterChange(cat)}
                     className={`flex items-center gap-3 px-6 py-3 rounded-full text-xs md:text-sm transition-all duration-500 border ${activeFilter === cat
-                        ? 'bg-[#d4af37] text-black border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] scale-105'
-                        : 'bg-black/40 text-gray-500 border-[#d4af37]/10 hover:border-[#d4af37]/40 hover:text-[#d4af37]'
+                      ? 'bg-[#d4af37] text-black border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] scale-105'
+                      : 'bg-black/40 text-gray-500 border-[#d4af37]/10 hover:border-[#d4af37]/40 hover:text-[#d4af37]'
                       } ${isRtl ? 'font-reem' : 'font-english'}`}
                   >
                     <span className={activeFilter === cat ? 'text-black' : 'text-[#d4af37]/60'}>
