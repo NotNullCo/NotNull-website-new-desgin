@@ -25,6 +25,13 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
     return () => clearInterval(timer);
   }, [lang]);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
@@ -97,10 +104,16 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           </h2>
 
           <div className={`flex flex-col md:flex-row items-center justify-center gap-8 ${isRtl ? 'font-reem' : 'font-english font-semibold'}`}>
-            <button className="px-12 py-4 text-lg bg-[#d4af37] text-black hover:bg-[#f6e05e] transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.2)]">
+            <button
+              onClick={() => scrollToSection('services')}
+              className="px-12 py-4 text-lg bg-[#d4af37] text-black hover:bg-[#f6e05e] transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.2)] active:scale-95"
+            >
               {t.hero.cta_start}
             </button>
-            <button className="px-12 py-4 text-lg border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 transition-all">
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="px-12 py-4 text-lg border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 transition-all active:scale-95"
+            >
               {t.hero.cta_work}
             </button>
           </div>
