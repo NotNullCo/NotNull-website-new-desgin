@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { TRANSLATIONS } from '../constants';
 
 interface HeroProps {
@@ -11,11 +11,25 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = TRANSLATIONS[lang];
   const isRtl = lang === 'ar';
 
+  const phrases = {
+    ar: ['بفخامة المسند', 'بإبداع تقني', 'برؤية مستقبلية', 'بدقة متناهية', 'بشغف الابتكار'],
+    en: ['Musnad Luxury', 'Tech Creativity', 'Future Vision', 'Extreme Precision', 'Innovation Passion']
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % phrases[lang].length);
+    }, 1500);
+    return () => clearInterval(timer);
+  }, [lang]);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         {[...Array(60)].map((_, i) => (
-          <div 
+          <div
             key={i}
             className="star"
             style={{
@@ -37,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           className="flex flex-col items-center"
         >
           <div className="relative mb-8 gold-glow">
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -64,10 +78,24 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
             <div className="h-px w-40 bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent mt-4"></div>
           </div>
 
-          <h2 className={`text-xl md:text-3xl font-light mb-12 tracking-wide text-gray-300 ${isRtl ? 'font-reem leading-relaxed' : 'font-serif-lux'}`}>
-             {t.hero.subtitle.split(' ').slice(0, -2).join(' ')} <span className="gold-metallic font-bold">{t.hero.subtitle.split(' ').slice(-2).join(' ')}</span>
+          <h2 className={`text-xl md:text-3xl font-light mb-12 tracking-wide text-gray-300 min-h-[3.5rem] flex flex-wrap justify-center items-center ${isRtl ? 'font-reem leading-relaxed' : 'font-serif-lux'}`}>
+            <span>{t.hero.subtitle.split(' ').slice(0, -2).join(' ')}&nbsp;</span>
+            <div className="relative inline-block overflow-hidden h-[1.2em] min-w-[max-content]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentIndex}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="gold-metallic font-bold"
+                >
+                  {phrases[lang][currentIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
           </h2>
-          
+
           <div className={`flex flex-col md:flex-row items-center justify-center gap-8 ${isRtl ? 'font-reem' : 'font-english font-semibold'}`}>
             <button className="px-12 py-4 text-lg bg-[#d4af37] text-black hover:bg-[#f6e05e] transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.2)]">
               {t.hero.cta_start}
