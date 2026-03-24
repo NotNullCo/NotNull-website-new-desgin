@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft, CheckCircle2, Star } from 'lucide-react';
+import { ArrowRight, ArrowLeft, TickCircle as CheckCircle2, MagicStar as Star } from 'iconsax-reactjs';
 import { Service } from '../types';
 
 interface ServiceDetailsProps {
@@ -15,7 +15,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service, onBack, lang }
   const BackIcon = isRtl ? ArrowRight : ArrowLeft;
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 1.05 }}
@@ -48,8 +48,8 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service, onBack, lang }
               <p className="text-2xl text-gray-300 font-light leading-relaxed mb-8">{isRtl ? service.details_ar : service.details_en}</p>
               <div className={`p-8 bg-white/5 ${isRtl ? 'border-r-4' : 'border-l-4'} border-[#d4af37] backdrop-blur-sm`}>
                 <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                   <Star className="text-[#d4af37]" size={18} />
-                   {isRtl ? 'لماذا نوت نول؟' : 'Why Not Null?'}
+                  <Star className="text-[#d4af37]" size={18} />
+                  {isRtl ? 'لماذا نوت نول؟' : 'Why Not Null?'}
                 </h4>
                 <p className="text-gray-400 text-lg leading-relaxed">{isRtl ? service.whyUs_ar : service.whyUs_en}</p>
               </div>

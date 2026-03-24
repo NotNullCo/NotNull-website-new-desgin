@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code, Rocket, Shield, Cpu, Globe, Layout, Quote, LayoutGrid, CreditCard, Building2, ShoppingBag, Zap, HeartPulse, Smartphone, Palette, Cloud, BarChart3, Search, Share2, Headphones, FileSearch, PenTool, Terminal, CheckCircle, Rocket as RocketIcon, MessageCircle, Video, Film, Mail, Server, Printer, Package, Megaphone, Layers, UserCheck, FileText, ShieldCheck, Brain } from 'lucide-react';
+import { Code, StatusUp as Rocket, SecuritySafe as Shield, Cpu, Global as Globe, Designtools as Layout, QuoteUp as Quote, Grid9 as LayoutGrid, Card as CreditCard, Bank as Building2, Shop as ShoppingBag, Flash as Zap, Health as HeartPulse, Mobile as Smartphone, Colorfilter as Palette, Cloud, Chart as BarChart3, SearchNormal as Search, DirectboxSend as Share2, Headphone as Headphones, DocumentFilter as FileSearch, PenTool, Command as Terminal, TickCircle as CheckCircle, StatusUp as RocketIcon, MessageText as MessageCircle, Video, VideoPlay as Film, Message as Mail, Cloud as Server, Printer, Box as Package, Notification as Megaphone, Hierarchy as Layers, UserTick as UserCheck, DocumentText as FileText, ShieldTick as ShieldCheck, Cpu as Brain } from 'iconsax-reactjs';
 import { Service, Project } from './types';
 
 export const COLORS = {
@@ -73,14 +73,15 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'تواصل معنا',
       title: 'دعنا نبدأ رحلة النجاح',
-      email: 'البريد الإلكتروني',
+      hours: 'ساعات العمل',
+      hours_val: 'السبت - الخميس: 9 ص - 6 م',
       phone: 'الهاتف',
-      location: 'الموقع',
-      loc_val: 'الرياض، المملكة العربية السعودية',
-      name_label: 'الاسم',
-      email_label: 'البريد الإلكتروني',
-      msg_label: 'الرسالة',
-      send: 'إرسال',
+      support: 'الدعم الفني',
+      support_val: 'متاح على مدار الساعة عبر الواتساب',
+      name_label: 'الاسم الكامل',
+      email_label: 'عنوان البريد الإلكتروني',
+      msg_label: 'تفاصيل المشروع',
+      send: 'إرسال الرسالة الآن',
     },
     footer: {
       copy: 'شركة Not Null للبرمجيات.',
@@ -149,14 +150,15 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'Contact Us',
       title: 'Let\'s Start the Success Journey',
-      email: 'Email',
+      hours: 'Working Hours',
+      hours_val: 'Sat - Thu: 9 AM - 6 PM',
       phone: 'Phone',
-      location: 'Location',
-      loc_val: 'Riyadh, Saudi Arabia',
-      name_label: 'Name',
+      support: 'Tech Support',
+      support_val: 'Available 24/7 via WhatsApp',
+      name_label: 'Full Name',
       email_label: 'Email Address',
-      msg_label: 'Message',
-      send: 'Send Message',
+      msg_label: 'Project Details',
+      send: 'Send Message Now',
     },
     footer: {
       copy: 'Not Null Software Solutions.',

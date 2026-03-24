@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Languages } from 'lucide-react';
+import { HamburgerMenu as Menu, CloseCircle as X, LanguageSquare as Languages } from 'iconsax-reactjs';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 import { TRANSLATIONS } from '../constants';
@@ -35,13 +35,12 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLanguage }) => {
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        isScrolled ? 'bg-black/95 py-3 border-b border-[#d4af37]/10 backdrop-blur-md' : 'bg-transparent py-6'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/95 py-3 border-b border-[#d4af37]/10 backdrop-blur-md' : 'bg-transparent py-6'
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between flex-row-reverse">
-        
+
         {/* Logo - عودة للحجم المتناسق */}
         <a href="#home" className="flex items-center">
           <Logo className="w-10 h-12" showText={false} />
@@ -51,8 +50,8 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLanguage }) => {
         <div className={`hidden lg:flex items-center gap-10 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
           <div className="flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className={`text-[14px] font-medium tracking-[0.2em] uppercase text-gray-400 hover:text-[#d4af37] transition-all duration-300 ${isRtl ? 'font-reem' : 'font-english'}`}
               >
@@ -60,12 +59,11 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLanguage }) => {
               </a>
             ))}
           </div>
-          
-          <button 
+
+          <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-3 text-[#d4af37] hover:text-white transition-all duration-300 group px-4 py-2 ${
-              isRtl ? 'border-r border-gray-800' : 'border-l border-gray-800'
-            }`}
+            className={`flex items-center gap-3 text-[#d4af37] hover:text-white transition-all duration-300 group px-4 py-2 ${isRtl ? 'border-r border-gray-800' : 'border-l border-gray-800'
+              }`}
           >
             <Languages size={20} className="group-hover:rotate-12 transition-transform" />
             <span className="text-[12px] font-bold tracking-widest uppercase">{lang === 'ar' ? 'EN' : 'AR'}</span>
@@ -77,8 +75,8 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLanguage }) => {
           <button onClick={toggleLanguage} className="text-[#d4af37] p-2 border border-[#d4af37]/20 rounded-full">
             <span className="text-sm font-bold">{lang === 'ar' ? 'EN' : 'AR'}</span>
           </button>
-          
-          <button 
+
+          <button
             className="text-[#d4af37]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -89,15 +87,15 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLanguage }) => {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className="lg:hidden absolute top-full left-0 right-0 bg-black border-t border-[#d4af37]/10 p-10 flex flex-col gap-8 h-screen z-50 overflow-y-auto"
           >
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className={`text-3xl text-center text-white hover:text-[#d4af37] transition-colors ${isRtl ? 'font-reem' : 'font-serif-lux'}`}
                 onClick={() => setIsMobileMenuOpen(false)}

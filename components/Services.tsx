@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SERVICES, TRANSLATIONS } from '../constants';
 import { Service } from '../types';
-import { ChevronDown } from 'lucide-react';
+import { ArrowDown2 as ChevronDown } from 'iconsax-reactjs';
 
 interface ServicesProps {
   onServiceSelect?: (service: Service) => void;
@@ -28,14 +28,14 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect, lang }) => {
     <section id="services" className="py-24 bg-black relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <motion.div 
-            initial={{ opacity: 0 }} 
+          <motion.div
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-[#d4af37] font-musnad tracking-[0.5em] mb-4 text-xl opacity-40"
           >
             𐩥𐩧𐩤𐩧 𐩱𐩰𐩧𐩱𐩵
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className={`text-4xl md:text-5xl font-bold ${isRtl ? 'font-reem' : 'font-serif-lux'}`}
@@ -74,7 +74,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect, lang }) => {
                 <p className="text-gray-400 leading-relaxed font-light text-base">
                   {isRtl ? service.desc_ar : service.desc_en}
                 </p>
-                
+
                 <div className="mt-8 flex items-center gap-4 text-[#d4af37] opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
                   <span className="text-xs font-bold tracking-widest uppercase">{t.services.more}</span>
                   <span className="font-musnad text-lg">𐩰</span>
@@ -86,8 +86,8 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect, lang }) => {
 
         {hasMore && (
           <div className="mt-16 text-center">
-            <button 
-              onClick={handleShowMore} 
+            <button
+              onClick={handleShowMore}
               className="group relative px-12 py-5 border border-[#d4af37]/20 text-[#d4af37] text-sm hover:text-black transition-all overflow-hidden rounded-full bg-black hover:border-[#d4af37]/60 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
             >
               <span className="relative z-10 flex items-center gap-3 font-bold tracking-widest uppercase">

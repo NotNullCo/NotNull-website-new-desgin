@@ -18,7 +18,7 @@ import Testimonials from './components/Testimonials';
 import { PROJECTS, TRANSLATIONS, FILTER_ICONS } from './constants';
 import { Project, Service } from './types';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, LayoutGrid, MessageCircle } from 'lucide-react';
+import { ArrowDown2 as ChevronDown, Grid9 as LayoutGrid, MessageText as MessageCircle } from 'iconsax-reactjs';
 
 const INITIAL_PROJECTS_COUNT = 6;
 
@@ -85,12 +85,12 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       <MusnadBackground />
-      
+
       <AnimatePresence>
         {selectedProject && (
-          <ProjectDetails 
-            project={selectedProject} 
-            onBack={() => setSelectedProject(null)} 
+          <ProjectDetails
+            project={selectedProject}
+            onBack={() => setSelectedProject(null)}
             lang={lang}
           />
         )}
@@ -98,18 +98,18 @@ const App: React.FC = () => {
 
       <AnimatePresence>
         {selectedService && (
-          <ServiceDetails 
-            service={selectedService} 
-            onBack={() => setSelectedService(null)} 
+          <ServiceDetails
+            service={selectedService}
+            onBack={() => setSelectedService(null)}
             lang={lang}
           />
         )}
       </AnimatePresence>
 
       {/* Floating Contact Button */}
-      <a 
-        href="https://wa.me/966500000000" 
-        target="_blank" 
+      <a
+        href="https://wa.me/966500000000"
+        target="_blank"
         rel="noopener noreferrer"
         className={`fixed bottom-8 ${isRtl ? 'left-8' : 'right-8'} z-50 p-4 bg-[#d4af37] text-black rounded-full shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:scale-110 transition-transform flex items-center gap-2 group`}
       >
@@ -119,7 +119,7 @@ const App: React.FC = () => {
         <MessageCircle size={28} />
       </a>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
         transition={{ duration: 1 }}
@@ -131,7 +131,7 @@ const App: React.FC = () => {
           <AboutUs lang={lang} />
           <Services onServiceSelect={setSelectedService} lang={lang} />
           <Process lang={lang} />
-          
+
           <section id="projects" className="py-24 bg-black/50 backdrop-blur-sm border-t border-[#d4af37]/5">
             <div className="container mx-auto px-6">
               <div className="text-center mb-16">
@@ -150,11 +150,10 @@ const App: React.FC = () => {
                   <button
                     key={cat}
                     onClick={() => handleFilterChange(cat)}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-full text-xs md:text-sm transition-all duration-500 border ${
-                      activeFilter === cat 
-                        ? 'bg-[#d4af37] text-black border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] scale-105' 
+                    className={`flex items-center gap-3 px-6 py-3 rounded-full text-xs md:text-sm transition-all duration-500 border ${activeFilter === cat
+                        ? 'bg-[#d4af37] text-black border-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] scale-105'
                         : 'bg-black/40 text-gray-500 border-[#d4af37]/10 hover:border-[#d4af37]/40 hover:text-[#d4af37]'
-                    } ${isRtl ? 'font-reem' : 'font-english'}`}
+                      } ${isRtl ? 'font-reem' : 'font-english'}`}
                   >
                     <span className={activeFilter === cat ? 'text-black' : 'text-[#d4af37]/60'}>
                       {FILTER_ICONS[cat] || <LayoutGrid size={16} />}
@@ -163,11 +162,11 @@ const App: React.FC = () => {
                   </button>
                 ))}
               </div>
-              
+
               <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <AnimatePresence mode="popLayout">
                   {displayedProjects.map((project) => (
-                    <motion.div 
+                    <motion.div
                       layout key={project.id}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}

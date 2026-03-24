@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowLeft, CheckCircle2, Globe, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ArrowLeft, TickCircle as CheckCircle2, Global as Globe, SecuritySafe as Shield, ArrowLeft2 as ChevronLeft, ArrowRight2 as ChevronRight } from 'iconsax-reactjs';
 import { Project } from '../types';
 
 interface ProjectDetailsProps {
@@ -24,7 +24,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, onBack, lang }
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: isRtl ? 100 : -100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: isRtl ? -100 : 100 }}
@@ -48,10 +48,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, onBack, lang }
           <div className="space-y-8">
             <div className="relative group rounded-2xl overflow-hidden border border-[#d4af37]/30 shadow-[0_0_50px_rgba(212,175,55,0.1)] aspect-video bg-black/40">
               <AnimatePresence mode="wait">
-                <motion.img 
+                <motion.img
                   key={currentImageIndex}
-                  src={project.imageUrls[currentImageIndex]} 
-                  alt={`${project.title_ar} - ${currentImageIndex + 1}`} 
+                  src={project.imageUrls[currentImageIndex]}
+                  alt={`${project.title_ar} - ${currentImageIndex + 1}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -60,7 +60,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, onBack, lang }
                 />
               </AnimatePresence>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 bg-black/40 border border-[#d4af37]/10 rounded-xl">
                 <Globe className="text-[#d4af37] mb-3" />

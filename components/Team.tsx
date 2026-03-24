@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Global as Linkedin, Direct as Twitter } from 'iconsax-reactjs';
 import { TEAM_MEMBERS, TRANSLATIONS } from '../constants';
 
 interface TeamProps {

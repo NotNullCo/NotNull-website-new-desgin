@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye } from 'lucide-react';
+import { Direct as Target, Eye } from 'iconsax-reactjs';
 import { TRANSLATIONS } from '../constants';
 
 interface AboutUsProps {

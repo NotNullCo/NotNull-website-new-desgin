@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FAQ_DATA, TRANSLATIONS } from '../constants';
-import { Plus, Minus } from 'lucide-react';
+import { Add as Plus, Minus } from 'iconsax-reactjs';
 
 interface FAQProps {
   lang: 'ar' | 'en';
@@ -17,14 +17,14 @@ const FAQ: React.FC<FAQProps> = ({ lang }) => {
     <section id="faq" className="py-24 bg-black relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 max-w-4xl">
         <div className="text-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0 }} 
+          <motion.div
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-[#d4af37] font-musnad tracking-[0.5em] mb-4 text-xl opacity-40"
           >
             𐩩𐩯𐩱𐩥𐩡
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className={`text-4xl md:text-5xl font-bold ${isRtl ? 'font-reem' : 'font-serif-lux'}`}
@@ -36,8 +36,8 @@ const FAQ: React.FC<FAQProps> = ({ lang }) => {
 
         <div className="space-y-4">
           {FAQ_DATA.map((item, index) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className={`border border-[#d4af37]/10 bg-[#050505] rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-[#d4af37]/40 shadow-[0_0_20px_rgba(212,175,55,0.05)]' : ''}`}
             >
               <button
@@ -51,7 +51,7 @@ const FAQ: React.FC<FAQProps> = ({ lang }) => {
                   {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
                 </span>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
